@@ -77,29 +77,23 @@ public class binario{
 	}
 
 
-	System.out.println(c);
+	//System.out.println(c);
 	for(i=c-1;i>=0;i--){
 	
-	System.out.print(A[i]);
+	System.out.println(A[i]);
 
 	}
 	
 	}
-
-	
-	
-
-
 
 	
 	public static void suma(){
-
-
 
 	int a,b,c,d,e;
 	int i;
 	int A[] = new int[40];
 	int B[] = new int[40];
+	int Aux[] = new int[40];
 	Scanner I;
 	I = new Scanner(System.in);
 
@@ -108,17 +102,33 @@ public class binario{
 	System.out.println("Introduce un numero binario");
 	a=I.nextInt();
 
-	c=0;
-	for(i=0;i!=0;i++){
+	c=0; // Lo que hace este for es tomar el residuo de la división y la va almacenando en el array y el 2 toma el cociente como entero
+	for(i=0;a!=0;i++){
 
-	A[i]= a%2;
-	a = a/2;
-	c++;
-	
+	A[i]= a%10;
+	a = a/10;
+	c=c+1;
+	//System.out.print(A[i]);
 	}
 
-	
-	
+
+	System.out.println(c);
+	System.out.println(A[3]);
+	d=0; //Solucione esto con un contador para que el valor de la ultima posicion del array pase a la primera posicion del arrayAux
+	for(i=c-1;i>=0;i--){
+
+	Aux[d]=A[i];
+	d++;
+
+	}
+
+
+	for(i=0;i<d;i++){
+
+	System.out.print(Aux[i]);
+
+	}
+
 
 	
 	}
@@ -128,8 +138,10 @@ public class binario{
 
 	public static void main(String args[]){
 
-	BinarioaDecimal();
-	DecimalaBinario();
+	//BinarioaDecimal();
+	//DecimalaBinario();
+
+	suma();
 
 
 	
